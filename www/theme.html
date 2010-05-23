@@ -42,9 +42,6 @@
     div.post h5 { font-size: 13px; }
     div.post h6 { font-size: 12px; }
     div.post h1, div.post h2, div.post h3, div.post h4, div.post h5, div.post h6 { margin-top: 30px; }
-    div.post h2.posttitle { margin: 15px 0px 15px; }
-    h2.posttitle a { font-size: 22px; color: {color:Post Title}; margin-top: 0px; padding-top: 0px; }
-    h2.posttitle a:hover { color: {color:Lighter Text}; text-decoration: none; }
 
     h1 { letter-spacing: -1px; }
     h2 { letter-spacing: -1px; }
@@ -75,9 +72,6 @@
 
     div.spanningbody { width: 500px; margin-top: 10px; margin-bottom: 20px; margin-left: 155px;
         font-size: 1.4em; padding-bottom: 3px; color: {color:Lighter Text}; }
-
-    div.date { float: left; width: 130px; color: {color:Date}; font-size: 1.4em; padding-top: 25px; text-align: right; }
-    div.date a { color: {color:Date}; font-size: 14px; }
 
     div.post { float: left; width: 500px; margin-left: 25px; font-size: 1.2em; padding-top: 5px; padding-bottom: 10px; }
     div.post p, div.post blockquote { margin: 18px 0px; }
@@ -262,12 +256,36 @@
         color:      #000000;
         text-decoration:  none;
       }
+      
+      .postunit .date {
+        float: left;
+        width: 130px;
+        font-size: 1.4em;
+        padding-top: 25px;
+        text-align: right;
+      }
+      .postunit .date a {
+        font-size: 14px;
+        color: #818181;
+        background-color: #000000;
+      }
+      
+      .postunit h2.posttitle {
+        margin: 15px 0px 15px;
+      }
+      .postunit h2.posttitle a {
+        font-size: 22px;
+        color: #dddddd;
+        margin-top: 0px;
+        padding-top: 0px;
+      }
+      .postunit h2.posttitle a:hover {
+        color: #ffffff;
+        text-decoration: none;
+      }
     </style>
     
-    
-    <title>
-        {PageTitle}
-    </title>
+    <title>{PageTitle}</title>
 </head>
 
     
