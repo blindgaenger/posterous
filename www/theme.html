@@ -14,8 +14,6 @@
     <link rel="icon" href="/images/favicon.png" type="image/x-png"/>
     <style type="text/css">
 
-    * { margin: 0px; padding: 0px; }
-
     /* -- terrible browser hacks -- */
     select { min-width:1.5em; }
 
@@ -25,11 +23,6 @@
     img { border: none; }
     img.border { border: 1px solid {color:Lighter Text}; }
     img.profile_border { vertical-align: middle; }
-
-    body, html { text-align: center; width: 100%; height: 100%; margin: 0px; padding: 0px;
-        background-color: {color:Background}; font-family: Arial, Helvetica, sans-serif; color: {color:Text};}
-    body {     font-size: 62.5%; }
-    html { font-size: 100%; }
 
     ol { margin: 15px 0px 15px 20px;}
     ul { margin: 15px 0px 15px 15px;}
@@ -207,13 +200,32 @@
     
     
     <style type="text/css">
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      html {
+        font-size: 100%;
+      }
+
       body {
         -moz-background-clip: border;
         -moz-background-inline-policy: continuous;
         -moz-background-origin: padding;
         background: {color:Background} url(http://blindgaenger.github.com/images/background.png) repeat scroll 0 0;
         font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+      }
+
+      body {
+        font-size: 62.5%;
+      }
+
+      body, html {
+        width: 100%;
+        height: 100%;
         margin: 0px;
+        padding: 0px;
       }
 
       #backlight {
@@ -235,6 +247,21 @@
         padding:      15px;
         position:     relative;
       }
+      
+      #header h1 {
+        padding:      30px 0px 50px 0px;
+        margin:       0px;
+        text-align:     center;
+        font:       Bold 55px 'Arial Black', Tahoma, Helvetica, sans-serif;
+        letter-spacing:   -2px;
+        line-height:    50px;
+        text-shadow:3px 3px 5px #A0A0A0;
+      }
+      
+      #header h1 a {
+        color:      #000000;
+        text-decoration:  none;
+      }
     </style>
     
     
@@ -248,28 +275,15 @@
   <div id="backlight">
     <div id="content">
         <div class="posterous_bar">
-            {PosterousBar}
+          {PosterousBar}
         </div>
         <div class="posterous_flash">
-            {block:Flash/}
+          {block:Flash/}
         </div>
         
-        {block:HeaderImage}
-            <div class="header_image">
-                <a href="{SiteURL}"><img src="{HeaderImageURL-500}" alt="{Title} - {Description}"/></a>
-            </div>
-        
-        {Else}
-            <div class="header">
-                <h1><a href="{SiteURL}">{Title}</a></h1>
-            </div>
-
-            <div class="subhead">              
-            {block:Description}  
-                    {Description}&nbsp;
-            {/block:Description}
-            </div>
-        {/block:HeaderImage}
+        <div id="header" class="header">
+          <h1><a href="{SiteURL}">{Title}</a></h1>
+        </div>
         
         {block:Show}
             <div class="back_to_blog">        
