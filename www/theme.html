@@ -73,11 +73,8 @@
     div.spanningbody { width: 500px; margin-top: 10px; margin-bottom: 20px; margin-left: 155px;
         font-size: 1.4em; padding-bottom: 3px; color: {color:Lighter Text}; }
 
-    div.post { float: left; width: 500px; margin-left: 25px; font-size: 1.2em; padding-top: 5px; padding-bottom: 10px; }
-    div.post p, div.post blockquote { margin: 18px 0px; }
     div.posterousGalleryMainDiv { margin: 15px 0px 15px;}
 
-    div.postunit { overflow: hidden; width: 700px; margin-bottom: 35px; clear: left; position: relative;}
     div.searchunit { overflow: hidden; width: 700px; margin-bottom: 50px; clear: left; }
     div.tagunit { overflow: hidden; margin-left: 155px; width: 500px; margin-bottom: 25px; clear: left; padding-bottom: 0px; }        
 
@@ -257,6 +254,14 @@
         text-decoration:  none;
       }
       
+      /* postunit */
+      .postunit {
+        overflow: hidden;
+        width: 700px;
+        clear: left;
+        position: relative;
+      }
+      
       .postunit .date {
         float: left;
         width: 130px;
@@ -264,24 +269,44 @@
         padding-top: 25px;
         text-align: right;
       }
+      
       .postunit .date a {
         font-size: 14px;
         color: #818181;
         background-color: #000000;
+        padding: 5px;
+      }
+      
+      .postunit .date a:hover {
+        text-decoration: none;
       }
       
       .postunit h2.posttitle {
         margin: 15px 0px 15px;
       }
+      
       .postunit h2.posttitle a {
         font-size: 22px;
         color: #dddddd;
         margin-top: 0px;
         padding-top: 0px;
       }
+      
       .postunit h2.posttitle a:hover {
         color: #ffffff;
         text-decoration: none;
+      }
+      
+      /* post */
+      .post {
+        float: left;
+        width: 500px;
+        margin-left: 25px;
+        font-size: 1.2em;
+      }
+      
+      .post p, .post blockquote {
+        margin: 18px 0px;
       }
     </style>
     
