@@ -92,8 +92,7 @@
     .pagination { padding: 3px; margin: 3px; }
     .pagination a { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #ccc; text-decoration: none; color: #ccc; }
     .pagination a:hover, .pagination a:active { border: 1px solid #ca9d00; color: {color:Link}; }
-    .pagination span.current { padding: 2px 5px 2px 5px; margin: 2px; font-weight: bold; border: 1px solid {color:Link};
-      background-color: {color:Link}; color: #FFF; }
+    .pagination span.current { padding: 2px 5px 2px 5px; margin: 2px; font-weight: bold; border: 1px solid {color:Link}; background-color: {color:Link}; color: #FFF; }
     .pagination span.disabled { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #eee; color: #ddd; }
 
 
@@ -307,6 +306,11 @@
       
       .post p, .post blockquote {
         margin: 18px 0px;
+      }
+      
+      .post .share div {
+        float:left;
+        margin-right:1em;
       }
     </style>
     
@@ -575,7 +579,7 @@
                 <div class="post" id="post_{PostID}" >
                     <div class='editbox'>
                         {block:EditBox}
-                                {EditBoxContents}&nbsp;
+                            {EditBoxContents}&nbsp;
                         {/block:EditBox}
                     </div>
             
@@ -592,20 +596,6 @@
                             {Body}
                         </p>
                         
-                        
-                        {block:Retweet}
-                            <img src="/images/icons/services/twitter11.png" style="vertical-align: middle; position: relative; top: -1px;" />
-                            <span id="retweet_count_{PostID}">
-                              <a href="{RetweetLink}">
-                                {NumRetweets}
-                                <span id="retweet_count_label_{PostID}">mentions</span>
-                              </a>
-                            </span>
-                            {RetweetButton}
-                        
-                            <fb:like href="{Permalink}" layout="button_count"></fb:like>   
-                        {/block:Retweet}                        
-                        
                         {block:List}
                             {block:TagList}
                               <div style="font-size: 11px; line-height: 14px; color: #aaa; margin: 20px 0px 15px;">
@@ -616,7 +606,6 @@
                               </div>     
                             {/block:TagList}
                         {/block:List}
-
                         
                         {block:PostLocations}
                             <div style="font-size: 10px; color: #999; margin-top: 10px;" id="location_collapsed_{PostID}">
@@ -638,6 +627,14 @@
                             {block:ShowOnClick action_id='post_location_expander_{PostID}' hidden_div='post_location_expanded_{PostID}' to_hide_id='location_collapsed_{PostID}'/}  
                         {/block:PostLocations}
                     </div>
+                
+                    {block:Sharing}
+                      <div class="share">
+                        <div class="share_twitter">{block:Tweet /}</div>
+                        <div class="share_facebook">{block:FbLike layout="standard" showfaces="true" width="300" /}</div>
+                        <br style="clear: both;" />
+                      </div>
+                    {/block:Sharing}
                 
                     <div class="comment_list">
                         {block:Author}
@@ -686,14 +683,10 @@
             {block:Favorite hover_id='postunit_{PostID}' position_id='post_{PostID}'/}         
         {/block:Posts}
       
-
-
         <div class="pagepagination">
             {block:Pagination/}
         </div>
     
-
-            
         <br style="clear: both;"/><br/>
         
     </div>
